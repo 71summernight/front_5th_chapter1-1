@@ -190,4 +190,4 @@
         <a href="/" data-path="/" class="bg-blue-600 text-white px-4 py-2 rounded font-bold">홈으로 돌아가기</a>
       </div>
     </main>
-  `,e},h={"/":b,"/login":()=>(n.user&&i("/"),g()),"/profile":()=>n.user?f():(i("/login"),null),"/404":v},d=()=>{const e=document.getElementById("root");e.innerHTML="";const l=h[location.pathname];if(!l){i("/404");return}const o=l();o&&e.appendChild(o)},i=e=>{history.pushState({},"",e),d()},x=()=>{window.addEventListener("popstate",d),d()};x();
+  `,e},h={"/":b,"/login":()=>(n.user&&i("/"),g()),"/profile":()=>n.user?f():(i("/login"),null),"/404":v};location.hash===""&&location.pathname.includes("front_5th_chapter1-1")&&location.replace("/front_5th_chapter1-1/#/");const d=()=>{const e=document.getElementById("root");e.innerHTML="";const l=h[location.pathname];if(!l){i("/404");return}const o=l();o&&e.appendChild(o)},i=e=>{history.pushState({},"",e),d()},x=()=>{window.addEventListener("popstate",d),d()};x();
