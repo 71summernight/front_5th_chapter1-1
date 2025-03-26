@@ -153,7 +153,7 @@
 
       </div>
     </div>
-  `;const l=n.user||{username:"",email:"",bio:""};l&&(e.querySelector("#username").value=l.username,e.querySelector("#email").value=l.email,e.querySelector("#bio").value=l.bio);const s=e.querySelector("#profile-form"),r=t=>{t.preventDefault();const o=s.querySelector("#username").value,a=s.querySelector("#email").value,u=s.querySelector("#bio").value;n.user={username:o,email:a,bio:u},i("/profile")};return s.addEventListener("submit",r),e.querySelector("#header").appendChild(d()),e},g=()=>{const e=document.createElement("div");e.innerHTML=`
+  `;const l=n.user||{username:"",email:"",bio:""};l&&(e.querySelector("#username").value=l.username,e.querySelector("#email").value=l.email,e.querySelector("#bio").value=l.bio);const s=e.querySelector("#profile-form"),r=t=>{t.preventDefault();const o=s.querySelector("#username").value,a=s.querySelector("#email").value,u=s.querySelector("#bio").value;n.user={username:o,email:a,bio:u},i("/profile")};return s.addEventListener("submit",r),e.querySelector("#header").appendChild(d()),e},v=()=>{const e=document.createElement("div");e.innerHTML=`
     <main class="bg-gray-100 flex items-center justify-center min-h-screen">
       <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
         <h1 class="text-2xl font-bold text-center text-blue-600 mb-8">항해플러스</h1>
@@ -175,7 +175,7 @@
         </div>
       </div>
     </main>
-  `;const l=e.querySelector("#login-form"),s=r=>{r.preventDefault();const t=e.querySelector("#username").value;n.user={username:t,email:"",bio:""},i("/")};return l.addEventListener("submit",s),e},v=()=>{const e=document.createElement("div");return e.innerHTML=`
+  `;const l=e.querySelector("#login-form"),s=r=>{r.preventDefault();const t=e.querySelector("#username").value;n.user={username:t,email:"",bio:""},i("/")};return l.addEventListener("submit",s),e},g=()=>{const e=document.createElement("div");return e.innerHTML=`
     <main class="bg-gray-100 flex items-center justify-center min-h-screen">
       <div class="bg-white p-8 rounded-lg shadow-md w-full text-center" style="max-width: 480px">
         <h1 class="text-2xl font-bold text-blue-600 mb-4">항해플러스</h1>
@@ -187,4 +187,4 @@
         <a href="/" data-path="/" class="bg-blue-600 text-white px-4 py-2 rounded font-bold">홈으로 돌아가기</a>
       </div>
     </main>
-  `,e},h={"/":b,"/login":()=>(n.user&&i("/"),g()),"/profile":()=>n.user?f():(i("/login"),null),"/404":v};export{h as R,p as r};
+  `,e},h={"/":b,"/login":()=>(n.user&&i("/"),v()),"/profile":()=>n.user?f():(i("/login"),null),"/404":g};export{h as R,p as r};
