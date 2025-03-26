@@ -23,7 +23,7 @@
         </a>
       </li>
     </ul>
-  `,s.addEventListener("click",t=>{const o=t.target.closest("a[data-path]");if(o){t.preventDefault();const a=o.getAttribute("data-path");i(`#/${a}`)}});const r=s.querySelector("#logout");return r&&r.addEventListener("click",t=>{t.preventDefault(),n.clear(),i("/login")}),s}function d(){const e=document.createElement("div"),l=document.createElement("header");l.className="bg-blue-600 text-white p-4 sticky top-0 z-10";const s=document.createElement("h1");return s.className="text-2xl font-bold",s.textContent="항해플러스",l.appendChild(s),e.appendChild(l),e.appendChild(m()),e}function c(){return`        <footer class="bg-gray-200 p-4 text-center">
+  `,s.addEventListener("click",t=>{const o=t.target.closest("a[data-path]");if(o){t.preventDefault();const a=o.getAttribute("data-path");i(a)}});const r=s.querySelector("#logout");return r&&r.addEventListener("click",t=>{t.preventDefault(),n.clear(),i("/login")}),s}function d(){const e=document.createElement("div"),l=document.createElement("header");l.className="bg-blue-600 text-white p-4 sticky top-0 z-10";const s=document.createElement("h1");return s.className="text-2xl font-bold",s.textContent="항해플러스",l.appendChild(s),e.appendChild(l),e.appendChild(m()),e}function c(){return`        <footer class="bg-gray-200 p-4 text-center">
           <p>&copy; 2024 항해플러스. All rights reserved.</p>
         </footer>
 `}const b=()=>{const e=document.createElement("div");return e.innerHTML=`
