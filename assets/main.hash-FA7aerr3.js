@@ -1,0 +1,1 @@
+import{R as d}from"./routes-tOzh82wW.js";const a=()=>{const n=document.getElementById("root");n.innerHTML="";const e=location.hash.slice(1)||"/",o=d[e];if(!o){e!=="/404"&&(location.hash="#/404");return}const t=o();t&&n.appendChild(t)};window.addEventListener("DOMContentLoaded",()=>{a()});window.addEventListener("hashchange",()=>{a()});

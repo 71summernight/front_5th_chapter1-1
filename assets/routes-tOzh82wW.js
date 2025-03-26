@@ -2,7 +2,6 @@
     <ul class="flex justify-around">
       <li>
         <a 
-          href="/" 
           class="${l==="/"?"text-blue-600 font-bold":"text-gray-600"}" 
           data-path="/">
           홈
@@ -10,7 +9,6 @@
       </li>
       <li>
         <a 
-          href="/profile" 
           class="${l==="/profile"?"text-blue-600 font-bold":"text-gray-600"}" 
           data-path="/profile">
           프로필
@@ -18,7 +16,6 @@
       </li>
       <li>
         <a 
-          href="/login" 
           class="${l==="/login"?"text-blue-600 font-bold":"text-gray-600"}" 
           data-path="/login" 
           id="${e?"logout":"login-link"}">
