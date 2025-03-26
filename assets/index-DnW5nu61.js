@@ -1,73 +1,38 @@
-(function(){const o=document.createElement("link").relList;if(o&&o.supports&&o.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))s(e);new MutationObserver(e=>{for(const l of e)if(l.type==="childList")for(const n of l.addedNodes)n.tagName==="LINK"&&n.rel==="modulepreload"&&s(n)}).observe(document,{childList:!0,subtree:!0});function a(e){const l={};return e.integrity&&(l.integrity=e.integrity),e.referrerPolicy&&(l.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?l.credentials="include":e.crossOrigin==="anonymous"?l.credentials="omit":l.credentials="same-origin",l}function s(e){if(e.ep)return;e.ep=!0;const l=a(e);fetch(e.href,l)}})();const r={get user(){return JSON.parse(localStorage.getItem("user")||"null")},set user(t){localStorage.setItem("user",JSON.stringify(t))},clear(){localStorage.removeItem("user")}};function b(){const t=r.user,o=location.hash?location.hash.slice(1):location.pathname,s=location.hostname.includes("github.io")?"/front_5th_chapter1-1":"",e=`
-    <header class="bg-blue-600 text-white p-4 sticky top-0">
-      <h1 class="text-2xl font-bold">항해플러스</h1>
-    </header>
-  `,l=`
-    <nav class="bg-white shadow-md p-2 sticky top-14">
-      <ul class="flex justify-around">
-        <li>
-          <a 
-            href="${s}/" 
-            class="${o==="/"?"text-blue-600 font-bold":"text-gray-600"}" 
-            data-path="/">
-            홈
-          </a>
-        </li>
-        <li>
-          <a 
-            href="${s}/profile" 
-            class="${o==="/profile"?"text-blue-600 font-bold":"text-gray-600"}" 
-            data-path="/profile">
-            프로필
-          </a>
-        </li>
-        <li>
-          <a 
-            href="${s}/login" 
-            class="${o==="/login"?"text-blue-600 font-bold":"text-gray-600"}" 
-            data-path="/login" 
-            id="${t?"logout":"login-link"}">
-            ${t?"로그아웃":"로그인"}
-          </a>
-        </li>
-      </ul>
-    </nav>
-  `,n=document.createElement("div");n.innerHTML=e+l;const d=n.querySelector("#logout");return d&&d.addEventListener("click",c=>{c.preventDefault(),r.clear(),i("/login")}),n.addEventListener("click",c=>{const p=c.target.closest("a[data-path]");if(p){c.preventDefault();const h=p.getAttribute("data-path");i(h)}}),n}function m(){return`        <footer class="bg-gray-200 p-4 text-center">
+(function(){const l=document.createElement("link").relList;if(l&&l.supports&&l.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))r(t);new MutationObserver(t=>{for(const s of t)if(s.type==="childList")for(const n of s.addedNodes)n.tagName==="LINK"&&n.rel==="modulepreload"&&r(n)}).observe(document,{childList:!0,subtree:!0});function o(t){const s={};return t.integrity&&(s.integrity=t.integrity),t.referrerPolicy&&(s.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?s.credentials="include":t.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function r(t){if(t.ep)return;t.ep=!0;const s=o(t);fetch(t.href,s)}})();function u(){return`        <footer class="bg-gray-200 p-4 text-center">
           <p>&copy; 2024 항해플러스. All rights reserved.</p>
         </footer>
-`}function f(){const t=location.hostname.includes("github.io"),o=r.user,a=location.hash?location.hash.slice(1):location.pathname,s=t?"/front_5th_chapter1-1":"",e=document.createElement("nav");e.className="bg-white shadow-md p-2 sticky top-14",e.innerHTML=`
+`}const a={get user(){return JSON.parse(localStorage.getItem("user")||"null")},set user(e){localStorage.setItem("user",JSON.stringify(e))},clear(){localStorage.removeItem("user")}};function f(){const e=location.hostname.includes("github.io"),l=a.user,o=location.hash?location.hash.slice(1):location.pathname,r=e?"/front_5th_chapter1-1":"",t=document.createElement("nav");t.className="bg-white shadow-md p-2 sticky top-14",t.innerHTML=`
     <ul class="flex justify-around">
       <li>
         <a 
-          href="${s}/" 
-          class="${a==="/"?"text-blue-600 font-bold":"text-gray-600"}" 
+          href="${r}/" 
+          class="${o==="/"?"text-blue-600 font-bold":"text-gray-600"}" 
           data-path="/">
           홈
         </a>
       </li>
       <li>
         <a 
-          href="${s}/profile" 
-          class="${a==="/profile"?"text-blue-600 font-bold":"text-gray-600"}" 
+          href="${r}/profile" 
+          class="${o==="/profile"?"text-blue-600 font-bold":"text-gray-600"}" 
           data-path="/profile">
           프로필
         </a>
       </li>
       <li>
         <a 
-          href="${s}/login" 
-          class="${a==="/login"?"text-blue-600 font-bold":"text-gray-600"}" 
+          href="${r}/login" 
+          class="${o==="/login"?"text-blue-600 font-bold":"text-gray-600"}" 
           data-path="/login" 
-          id="${o?"logout":"login-link"}">
-          ${o?"로그아웃":"로그인"}
+          id="${l?"logout":"login-link"}">
+          ${l?"로그아웃":"로그인"}
         </a>
       </li>
     </ul>
-  `,e.addEventListener("click",n=>{const d=n.target.closest("a[data-path]");if(d){n.preventDefault();const c=d.getAttribute("data-path");i(c)}});const l=e.querySelector("#logout");return l&&l.addEventListener("click",n=>{n.preventDefault(),r.clear(),i("/login")}),e}const v=()=>{const t=document.createElement("div");return t.innerHTML=`
+  `,t.addEventListener("click",n=>{const d=n.target.closest("a[data-path]");if(d){n.preventDefault();const b=d.getAttribute("data-path");i(b)}});const s=t.querySelector("#logout");return s&&s.addEventListener("click",n=>{n.preventDefault(),a.clear(),i("/login")}),t}function p(){const e=document.createElement("div"),l=document.createElement("header");l.className="bg-blue-600 text-white p-4 sticky top-0 z-10";const o=document.createElement("h1");return o.className="text-2xl font-bold",o.textContent="항해플러스",l.appendChild(o),e.appendChild(l),e.appendChild(f()),e}const g=()=>{const e=document.createElement("div");return e.innerHTML=`
   <div class="bg-gray-100 min-h-screen flex justify-center">
     <div class="max-w-md w-full">
-      ${b()}
-       <div id="nav"></div>
+        <div id="header"></div>
           <main class="p-4">
             <div class="mb-4 bg-white rounded-lg shadow p-4">
               <textarea class="w-full p-2 border rounded" placeholder="무슨 생각을 하고 계신가요?"></textarea>
@@ -157,14 +122,14 @@
               </div>
             </div>
           </main>
-      ${m()}
+      ${u()}
     </div>
   </div>
-`,t.querySelector("#nav").replaceWith(f()),t},x=()=>{const t=document.createElement("div");t.innerHTML=`
+`,e.querySelector("#header").replaceWith(p()),e},v=()=>{const e=document.createElement("div");e.innerHTML=`
     <div class="bg-gray-100 min-h-screen flex justify-center">
       <div class="max-w-md w-full">
-      ${b()}
-      <div id="nav"></div>
+        <div id="header"></div>
+      <div id="nav-placeholder"></div>
         <main class="p-4">
           <div class="bg-white p-8 rounded-lg shadow-md">
             <h2 class="text-2xl font-bold text-center text-blue-600 mb-8">내 프로필</h2>
@@ -186,11 +151,11 @@
           </div>
         </main>
 
-      ${m()}
+      ${u()}
 
       </div>
     </div>
-  `;const o=r.user||{username:"",email:"",bio:""};o&&(t.querySelector("#username").value=o.username,t.querySelector("#email").value=o.email,t.querySelector("#bio").value=o.bio);const a=t.querySelector("#profile-form"),s=e=>{e.preventDefault();const l=a.querySelector("#username").value,n=a.querySelector("#email").value,d=a.querySelector("#bio").value;r.user={username:l,email:n,bio:d},i("/profile")};return a.addEventListener("submit",s),t.querySelector("#nav").replaceWith(f()),t},y=()=>{const t=document.createElement("div");t.innerHTML=`
+  `;const l=a.user||{username:"",email:"",bio:""};l&&(e.querySelector("#username").value=l.username,e.querySelector("#email").value=l.email,e.querySelector("#bio").value=l.bio);const o=e.querySelector("#profile-form"),r=t=>{t.preventDefault();const s=o.querySelector("#username").value,n=o.querySelector("#email").value,d=o.querySelector("#bio").value;a.user={username:s,email:n,bio:d},i("/profile")};return o.addEventListener("submit",r),e.querySelector("#header").replaceWith(p()),e},h=()=>{const e=document.createElement("div");e.innerHTML=`
     <main class="bg-gray-100 flex items-center justify-center min-h-screen">
       <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
         <h1 class="text-2xl font-bold text-center text-blue-600 mb-8">항해플러스</h1>
@@ -212,7 +177,7 @@
         </div>
       </div>
     </main>
-  `;const o=t.querySelector("#login-form"),a=s=>{s.preventDefault();const e=t.querySelector("#username").value;r.user={username:e,email:"",bio:""},i("/")};return o.addEventListener("submit",a),t},g=()=>{const t=document.createElement("div");return t.innerHTML=`
+  `;const l=e.querySelector("#login-form"),o=r=>{r.preventDefault();const t=e.querySelector("#username").value;a.user={username:t,email:"",bio:""},i("/")};return l.addEventListener("submit",o),e},m=()=>{const e=document.createElement("div");return e.innerHTML=`
     <main class="bg-gray-100 flex items-center justify-center min-h-screen">
       <div class="bg-white p-8 rounded-lg shadow-md w-full text-center" style="max-width: 480px">
         <h1 class="text-2xl font-bold text-blue-600 mb-4">항해플러스</h1>
@@ -224,4 +189,4 @@
         <a href="/" data-path="/" class="bg-blue-600 text-white px-4 py-2 rounded font-bold">홈으로 돌아가기</a>
       </div>
     </main>
-  `,t},w={"/":v,"/login":()=>(r.user&&i("/"),y()),"/profile":()=>r.user?x():(i("/login"),null),"/404":g},u=()=>{const t=document.getElementById("root");t.innerHTML="";const o=location.pathname,a=w[o];if(!a){if(o!=="/404"){history.pushState({},"","/404"),u();return}const e=g();t.appendChild(e);return}const s=a();s&&t.appendChild(s)},i=t=>{history.pushState({},"",t),u()},S=()=>{window.addEventListener("popstate",u),u()};S();
+  `,e},x={"/":g,"/login":()=>(a.user&&i("/"),h()),"/profile":()=>a.user?v():(i("/login"),null),"/404":m},c=()=>{const e=document.getElementById("root");e.innerHTML="";const l=location.pathname,o=x[l];if(!o){if(l!=="/404"){history.pushState({},"","/404"),c();return}const t=m();e.appendChild(t);return}const r=o();r&&e.appendChild(r)},i=e=>{history.pushState({},"",e),c()},y=()=>{window.addEventListener("popstate",c),c()};y();
