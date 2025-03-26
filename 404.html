@@ -1,15 +1,17 @@
+<!-- 404.html -->
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>항해플러스 SNS</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Redirecting...</title>
+    <meta http-equiv="refresh" content="0; url=/#/" />
+    <script>
+      // pathname을 hash로 변환
+      const path = location.pathname.replace(/^\/+/, "");
+      window.location.replace("/#/" + path);
+    </script>
   </head>
   <body>
-    <div id="root"></div>
-    <script>
-      window.location.href = "/#/" + location.pathname.slice(1);
-    </script>
+    <p>Redirecting...</p>
   </body>
 </html>
