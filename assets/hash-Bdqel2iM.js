@@ -1,0 +1,1 @@
+import{B as s,R as d}from"./router-CEkljnUW.js";const n=()=>{const e=document.getElementById("root");e.innerHTML="";const o=location.hash.slice(1).replace(s,"")||"/",t=d[s+o];if(!t){o!=="/404"&&(location.hash="#/404",n());return}const a=t();a&&e.appendChild(a)},i=()=>{window.addEventListener("DOMContentLoaded",n),window.addEventListener("hashchange",n)};i();
