@@ -125,7 +125,7 @@
       ${c()}
     </div>
   </div>
-`,e.querySelector("#header").replaceWith(u()),e},g=()=>{const e=document.createElement("div");e.innerHTML=`
+`,e.querySelector("#header").replaceWith(u()),e},h=()=>{const e=document.createElement("div");e.innerHTML=`
     <div class="bg-gray-100 min-h-screen flex justify-center">
       <div class="max-w-md w-full">
         <div id="header"></div>
@@ -155,7 +155,7 @@
 
       </div>
     </div>
-  `;const l=i.user||{username:"",email:"",bio:""};l&&(e.querySelector("#username").value=l.username,e.querySelector("#email").value=l.email,e.querySelector("#bio").value=l.bio);const o=e.querySelector("#profile-form"),a=t=>{t.preventDefault();const r=o.querySelector("#username").value,n=o.querySelector("#email").value,m=o.querySelector("#bio").value;i.user={username:r,email:n,bio:m},d("/profile")};return o.addEventListener("submit",a),e.querySelector("#header").replaceWith(u()),e},v=()=>{const e=document.createElement("div");e.innerHTML=`
+  `;const l=i.user||{username:"",email:"",bio:""};l&&(e.querySelector("#username").value=l.username,e.querySelector("#email").value=l.email,e.querySelector("#bio").value=l.bio);const o=e.querySelector("#profile-form"),a=t=>{t.preventDefault();const r=o.querySelector("#username").value,n=o.querySelector("#email").value,m=o.querySelector("#bio").value;i.user={username:r,email:n,bio:m},d("/profile")};return o.addEventListener("submit",a),e.querySelector("#header").replaceWith(u()),e},g=()=>{const e=document.createElement("div");e.innerHTML=`
     <main class="bg-gray-100 flex items-center justify-center min-h-screen">
       <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
         <h1 class="text-2xl font-bold text-center text-blue-600 mb-8">항해플러스</h1>
@@ -177,7 +177,7 @@
         </div>
       </div>
     </main>
-  `;const l=e.querySelector("#login-form"),o=a=>{a.preventDefault();const t=e.querySelector("#username").value;i.user={username:t,email:"",bio:""},d("/")};return l.addEventListener("submit",o),e},h=()=>{const e=document.createElement("div");return e.innerHTML=`
+  `;const l=e.querySelector("#login-form"),o=a=>{a.preventDefault();const t=e.querySelector("#username").value;i.user={username:t,email:"",bio:""},d("/")};return l.addEventListener("submit",o),e},v=()=>{const e=document.createElement("div");return e.innerHTML=`
     <main class="bg-gray-100 flex items-center justify-center min-h-screen">
       <div class="bg-white p-8 rounded-lg shadow-md w-full text-center" style="max-width: 480px">
         <h1 class="text-2xl font-bold text-blue-600 mb-4">항해플러스</h1>
@@ -189,4 +189,4 @@
         <a href="/" data-path="/" class="bg-blue-600 text-white px-4 py-2 rounded font-bold">홈으로 돌아가기</a>
       </div>
     </main>
-  `,e},x=location.hostname.includes("github.io"),s=x?"/front_5th_chapter1-1":"",y={[s+"/"]:f,[s+"/login"]:()=>(i.user&&d(s+"/"),v()),[s+"/profile"]:()=>i.user?g():(d(s+"/login"),null),[s+"/404"]:h},p=()=>{const e=document.getElementById("root");e.innerHTML="";const l=location.pathname.replace(s,"")||"/",o=y[s+l];if(!o){l!=="/404"&&(history.pushState({},"",s+"/404"),p());return}const a=o();a&&e.appendChild(a)},d=e=>{history.pushState({},"",`${s}${e}`),p()};export{s as B,y as R,p as r};
+  `,e},x=location.hostname.includes("github.io"),s=x?"/front_5th_chapter1-1":"";location.pathname.includes("index.hash.html");const y={[s+"/"]:f,[s+"/login"]:()=>(i.user&&d(s+"/"),g()),[s+"/profile"]:()=>i.user?h():(d(s+"/login"),null),[s+"/404"]:v},p=()=>{const e=document.getElementById("root");e.innerHTML="";const l=location.pathname.replace(s,"")||"/",o=y[s+l];if(!o){l!=="/404"&&(history.pushState({},"",s+"/404"),p());return}const a=o();a&&e.appendChild(a)},d=e=>{history.pushState({},"",`${s}${e}`),p()};export{s as B,y as R,p as r};
