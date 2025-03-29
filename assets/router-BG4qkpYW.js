@@ -189,4 +189,4 @@
         <a href="/" data-path="/" class="bg-blue-600 text-white px-4 py-2 rounded font-bold">홈으로 돌아가기</a>
       </div>
     </main>
-  `,e},x=location.hostname.includes("github.io"),a=x?"/front_5th_chapter1-1":"",y={"/":f,"/login":()=>(i.user&&d("/"),v()),"/profile":()=>i.user?g():(d("/login"),null),"/404":h},p=()=>{const e=document.getElementById("root");e.innerHTML="";const l=location.pathname.replace(a,"")||"/",o=y[a+l];if(!o){l!=="/404"&&(history.pushState({},"",a+"/404"),p());return}const r=o();r&&e.appendChild(r)},d=e=>{history.pushState({},"",`${a}${e}`),p()};export{a as B,y as R,p as r};
+  `,e},x=location.hostname.includes("github.io"),a=x?"/front_5th_chapter1-1":"",y={"/":f,"/login":()=>(i.user&&d("/"),v()),"/profile":()=>i.user?g():(d("/login"),null),"/404":h},p=()=>{const e=document.getElementById("root");e.innerHTML="";const l=location.pathname.replace(a,"")||"/",o=y[a+l];if(!o){l!=="/404"&&(history.pushState({},"",a+"/404"),p());return}const r=o();r&&e.appendChild(r)},d=e=>{history.pushState({},"",`${a}${e}`),p()};export{y as R,p as r};
